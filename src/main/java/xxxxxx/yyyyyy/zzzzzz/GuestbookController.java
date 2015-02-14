@@ -1,9 +1,13 @@
 package xxxxxx.yyyyyy.zzzzzz;
 
-import com.google.appengine.api.datastore.*;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.FetchOptions;
+import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +20,13 @@ import java.util.List;
 
 @Controller
 public class GuestbookController {
+    @Autowired
+    DatastoreService datastoreService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String list(Model model, HttpServletRequest request) {
-        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         Query query = new Query("Greeting").addSort("date", Query.SortDirection.DESCENDING);
-        List<Entity> greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(30));
+        List<Entity> greetings = datastoreService.prepare(query).asList(FetchOptions.Builder.withLimit(30));
         model.addAttribute("greetings", greetings);
 
         UserService userService = UserServiceFactory.getUserService();
@@ -44,8 +49,7 @@ public class GuestbookController {
         greeting.setProperty("content", content);
         greeting.setProperty("date", new Date());
 
-        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-        datastore.put(greeting);
+        datastoreService.put(greeting);
 
         return "redirect:/";
     }
