@@ -39,7 +39,7 @@ $ cd hajiboot
 
 #### Run on dev server
 
-    $ mvn  appengine:devserver
+    $ mvn appengine:devserver
 
 Go to http://localhost:8080
 
@@ -47,7 +47,7 @@ Go to http://localhost:8080
 
 modify application name in src/main/webapp/WEB-INF/appengine-web.xml if needed
 
-    $ mvm appengine:update
+    $ mvm clean appengine:update
 
 ## License
 
