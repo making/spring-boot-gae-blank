@@ -20,7 +20,7 @@ with CommandPrompt (Windows)
      -DarchetypeArtifactId=spring-boot-gae-blank-archetype^
      -DarchetypeVersion=1.0.2
 
-As a default setting, `artifactId` is used as application name.
+As a default setting, `artifactId` is used as application-id.
 
 ### Example
 
