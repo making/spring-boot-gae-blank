@@ -11,14 +11,14 @@ with Bash
     mvn archetype:generate\
      -DarchetypeGroupId=am.ik.archetype\
      -DarchetypeArtifactId=spring-boot-gae-blank-archetype\
-     -DarchetypeVersion=1.0.2
+     -DarchetypeVersion=1.0.3
 
 with CommandPrompt (Windows)
 
     mvn archetype:generate^
      -DarchetypeGroupId=am.ik.archetype^
      -DarchetypeArtifactId=spring-boot-gae-blank-archetype^
-     -DarchetypeVersion=1.0.2
+     -DarchetypeVersion=1.0.3
 
 As a default setting, `artifactId` is used as application-id.
 
@@ -30,7 +30,7 @@ As a default setting, `artifactId` is used as application-id.
 $ mvn archetype:generate -B\
  -DarchetypeGroupId=am.ik.archetype\
  -DarchetypeArtifactId=spring-boot-gae-blank-archetype\
- -DarchetypeVersion=1.0.2\
+ -DarchetypeVersion=1.0.3\
  -DgroupId=com.example\
  -DartifactId=spring-boot-demo\
  -Dversion=1.0.0-SNAPSHOT
