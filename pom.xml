@@ -54,7 +54,6 @@
         <start-class>xxxxxx.yyyyyy.zzzzzz.App</start-class>
         <java.version>1.7</java.version>
         <spring-boot-legacy.version>1.0.1.RELEASE</spring-boot-legacy.version>
-        <appengine.app.version>1</appengine.app.version>
         <appengine.target.version>1.9.17</appengine.target.version>
     </properties>
 
@@ -129,13 +128,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>springloaded</artifactId>
-                        <version>${spring-loaded.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
