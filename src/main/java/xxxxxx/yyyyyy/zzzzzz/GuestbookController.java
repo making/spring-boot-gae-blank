@@ -6,7 +6,6 @@ import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.UserServiceFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +21,8 @@ import java.util.List;
 public class GuestbookController {
     @Autowired
     DatastoreService datastoreService;
+    @Autowired
+    UserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String list(Model model, HttpServletRequest request) {
@@ -29,7 +30,6 @@ public class GuestbookController {
         List<Entity> greetings = datastoreService.prepare(query).asList(FetchOptions.Builder.withLimit(30));
         model.addAttribute("greetings", greetings);
 
-        UserService userService = UserServiceFactory.getUserService();
         User user = userService.getCurrentUser();
         if (user != null) {
             String username = user.getEmail();

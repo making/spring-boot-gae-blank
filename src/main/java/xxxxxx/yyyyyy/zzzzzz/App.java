@@ -2,6 +2,8 @@ package xxxxxx.yyyyyy.zzzzzz;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 import org.gmr.web.multipart.GMultipartResolver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +20,12 @@ public class App {
     @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
     DatastoreService datastoreService() {
         return DatastoreServiceFactory.getDatastoreService();
+    }
+
+    @Bean
+    @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
+    UserService userService() {
+        return UserServiceFactory.getUserService();
     }
 
     @Bean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME)
