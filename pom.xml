@@ -55,6 +55,7 @@
         <java.version>1.7</java.version>
         <spring-boot-legacy.version>1.0.1.RELEASE</spring-boot-legacy.version>
         <appengine.target.version>1.9.17</appengine.target.version>
+        <hibernate-validator.version>4.3.2.Final</hibernate-validator.version>
     </properties>
 
     <dependencies>
@@ -86,10 +87,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-legacy</artifactId>
             <version>${spring-boot-legacy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.el</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
