@@ -32,9 +32,9 @@ $ mvn archetype:generate -B\
  -DarchetypeArtifactId=spring-boot-gae-blank-archetype\
  -DarchetypeVersion=1.0.2\
  -DgroupId=com.example\
- -DartifactId=hajiboot\
+ -DartifactId=spring-boot-demo\
  -Dversion=1.0.0-SNAPSHOT
-$ cd hajiboot
+$ cd spring-boot-demo
 ```
 
 #### Run on dev server
@@ -48,6 +48,8 @@ Go to http://localhost:8080
 modify application name in src/main/webapp/WEB-INF/appengine-web.xml if needed
 
     $ mvm clean appengine:update
+
+Demo site is [here](http://spring-boot-demo.appspot.com/).
 
 ## License
 
