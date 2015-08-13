@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.1.RELEASE</version>
+        <version>1.2.5.RELEASE</version>
         <relativePath/>
     </parent>
     <licenses><!-- DELETE THIS LINE -->
@@ -114,7 +114,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>gmultipart</groupId>
+            <groupId>com.github.kernel164</groupId>
             <artifactId>gmultipart</artifactId>
             <version>0.4</version>
         </dependency>
@@ -160,8 +160,8 @@
 
     <repositories>
         <repository>
-            <id>gmultipart</id>
-            <url>http://gmultipart.googlecode.com/svn/repo/m2</url>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 </project>
